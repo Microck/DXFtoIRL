@@ -28,7 +28,7 @@ pip install ezdxf reportlab
 Run the script from the command line with the input DXF file and desired output PDF file paths:
 
 ```bash
-python a4.py "path/to/input.dxf" "path/to/output.pdf"
+python DXFConvert.py "path/to/input.dxf" "path/to/output.pdf"
 ```
 
 Ensure you replace `path/to/input.dxf` and `path/to/output.pdf` with the actual file paths.

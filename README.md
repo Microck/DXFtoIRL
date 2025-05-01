@@ -39,7 +39,7 @@ Ensure you replace `path/to/input.dxf` and `path/to/output.pdf` with the actual 
 
 This script takes a DXF file, like the keyboard plate design shown below (top), and converts it into a multi-page PDF (bottom) that can be printed at 1:1 scale for prototyping or manufacturing checks.
 
-<img src="example/example.jpg" alt="DXF to PDF Conversion Example" style="width: 100%; height: auto;">
+<img src="example/example.png" alt="DXF to PDF Conversion Example" style="width: 100%; height: auto;">
 
 After searching for the plate file for my custom keyboard, 'Synovia', I couldn't find it online as it wasn't publicly available and my specific iteration is discontinued. My only option was to design it from scratch. Since this was my first time creating such a part, although it looked correct on screen, I wanted to verify that the dimensions matched the physical keyboard plate before sending it for manufacturing. This script allowed me to print a 1:1 scale version for that crucial check.
 

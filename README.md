@@ -46,7 +46,7 @@ After searching for the plate file for my custom keyboard, 'Synovia', I couldn't
 ## Limitations
 
 - Currently supports a limited set of DXF entity types (focus on 2D geometry)
-- May not render complex entities or block references fully
+- May not render complex entities or block references fully.
 - Assumes DXF units are in millimeters (mm)
 - Not perfect, don't use it as a final check for your projects.
 

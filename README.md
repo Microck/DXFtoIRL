@@ -15,7 +15,7 @@ This tool reads a DXF file (commonly used for CAD drawings) and generates a PDF 
 
 ## Requirements
 
-- Python 3.x
+- Python 3.x.x
 - Libraries: `ezdxf`, `reportlab`
 
 Install the required libraries using:

@@ -1,14 +1,14 @@
-import ezdxf
-from ezdxf import bbox
-from ezdxf.math import BoundingBox
-from reportlab.lib.pagesizes import landscape, A4
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import mm
-import sys
-import os
-import math
+"""Convert DXF CAD files to multi-page A4 landscape PDFs at 1:1 scale.
 
-# --- Configuration ---
+This module reads DXF (Drawing Exchange Format) files and renders their
+modelspace contents onto tiled A4 landscape PDF pages. Each tile is
+accurately scaled to 1 unit = 1 mm, ensuring physical print accuracy.
+
+Supports DXF entity types: LINE, CIRCLE, ARC, LWPOLYLINE, POLYLINE,
+SPLINE (flattened), and ELLIPSE (flattened).
+
+Dependencies: ezdxf, reportlab
+"""
 PAGE_WIDTH_PT, PAGE_HEIGHT_PT = landscape(A4)
 POINTS_PER_MM = mm / 1.0
 DEFAULT_LINE_WIDTH = 0.3  # Thicker line for better visibility
@@ -346,6 +346,20 @@ def create_tiled_a4_pdf_from_dxf(dxf_filepath, pdf_filepath):
 
 # --- Main Execution ---
 if __name__ == "__main__":
+    """CLI entry point: convert a DXF file to a tiled A4 landscape PDF.
+
+    Expects exactly two command-line arguments:
+        1. Path to the input DXF file
+        2. Path for the output PDF file
+
+    All DXF content is rendered at 1:1 scale (1 DXF unit = 1 mm). Large
+    drawings are automatically split across multiple A4 landscape pages.
+
+    Exit codes:
+        0 - PDF created successfully
+        1 - Invalid arguments or file not found
+        2 - DXF read/structure error
+    """
     if len(sys.argv) != 3:
         print("Usage: python a4.py <input_dxf_file> <output_pdf_file>")
         sys.exit(1)
